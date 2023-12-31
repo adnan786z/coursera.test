@@ -1,0 +1,21 @@
+// Assume $dc is the global object containing the loadMenuItems function
+const $dc = {
+  loadMenuItems: function(category) {
+    // Implementation of loadMenuItems function
+    console.log(`Loading menu items for category: ${category}`);
+  }
+};
+
+// Function to generate a random category short_name
+function getRandomCategory() {
+  const categories = ['Lunch', 'Dinner', 'Sushi', 'Specials', 'Drinks']; // Add more categories as needed
+  const randomIndex = Math.floor(Math.random() * categories.length);
+  return categories[randomIndex];
+}
+
+// Event listener for Specials tile click
+document.getElementById('specials-tile').addEventListener('click', function(event) {
+  event.preventDefault();
+  const randomCategoryShortName = getRandomCategory();
+  $dc.loadMenuItems(randomCategoryShortName);
+});
