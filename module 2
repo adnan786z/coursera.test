@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            box-sizing: border-box;
+            padding: 20px;
+            border: 1px solid #000;
+            margin: 10px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 1.25em; /* 25% larger than dummy text */
+        }
+
+        .section-title {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #ffcc00; /* Unique color for title region */
+            padding: 5px;
+            border: 1px solid #000;
+        }
+
+        /* Desktop view */
+        @media (min-width: 992px) {
+            section {
+                width: 31.33%; /* Equal width for three sections with spacing */
+                float: left;
+            }
+        }
+
+        /* Tablet view */
+        @media (min-width: 768px) and (max-width: 991px) {
+            section {
+                width: 48%; /* Equal width for first two sections with spacing */
+                float: left;
+            }
+            section:nth-child(3) {
+                width: 100%; /* Full width for the third section in a new row */
+                clear: both; /* Clear the float to start a new row */
+            }
+        }
+
+        /* Mobile view */
+        @media (max-width: 767px) {
+            section {
+                width: 100%; /* Full width for each section */
+                float: none; /* Clear the float for mobile layout */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Restaurant</h1>
+    </header>
+
+    <section>
+        <div class="section-title">Chicken</div>
+        <h2>Chicken Section</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </section>
+
+    <section>
+        <div class="section-title">Beef</div>
+        <h2>Beef Section</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </section>
+
+    <section>
+        <div class="section-title">Sushi</div>
+        <h2>Sushi Section</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </section>
+
+</body>
+</html>
