@@ -1,0 +1,28 @@
+const fs = require('fs');
+const path = require('path');
+
+function copyFolderSync(from, to) {
+  if (!fs.existsSync(to)) {
+    fs.mkdirSync(to);
+  }
+
+  fs.readdirSync(from).forEach((element) => {
+    const sourcePath = path.join(from, element);
+    const destPath = path.join(to, element);
+
+    if (fs.lstatSync(sourcePath).isDirectory()) {
+      copyFolderSync(sourcePath, destPath);
+    } else {
+      fs.copyFileSync(sourcePath, destPath);
+    }
+  });
+}
+
+// Replace 'fullstack-course4/assignments/assignment4/assignment4-solution-starter/harder'
+// and 'module4-solution' with your actual paths
+const sourcePath = 'fullstack-course4/assignments/assignment4/assignment4-solution-starter/harder';
+const destinationPath = 'module4-solution';
+
+copyFolderSync(sourcePath, destinationPath);
+
+console.log('Files copied successfully!');
